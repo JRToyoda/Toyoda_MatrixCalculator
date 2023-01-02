@@ -7,9 +7,9 @@ class Matrix:
     def create(self):
         self.matrix = [[int(n) for n in input().split()] for _ in range(int(self.rows))]
 
-    def add(self, mtx):
-        if self.rows == mtx.rows and self.columns == mtx.columns:
-            answer = [[self.matrix[i][j] + mtx.matrix[i][j] for j in range(len(self.matrix[0]))]
+    def add(self, addend):
+        if self.rows == addend.rows and self.columns == addend.columns:
+            answer = [[self.matrix[i][j] + addend.matrix[i][j] for j in range(len(self.matrix[0]))]
                       for i in range(len(self.matrix))]
             for row in answer:
                 for val in row:
@@ -19,9 +19,9 @@ class Matrix:
         else:
             print("\nNot Possible")
 
-    def subtract(self, mtx):
-        if self.rows == mtx.rows and self.columns == mtx.columns:
-            answer = [[self.matrix[i][j] - mtx.matrix[i][j] for j in range(len(self.matrix[0]))]
+    def subtract(self, subtrahend):
+        if self.rows == subtrahend.rows and self.columns == subtrahend.columns:
+            answer = [[self.matrix[i][j] - subtrahend.matrix[i][j] for j in range(len(self.matrix[0]))]
                       for i in range(len(self.matrix))]
             for row in answer:
                 for val in row:
@@ -31,12 +31,12 @@ class Matrix:
         else:
             print("\nNot Possible")
 
-    def multiply(self, mtx):
-        if self.columns != mtx.rows:
+    def multiply(self, multiplier):
+        if self.columns != multiplier.rows:
             print("\nNot Possible")
         else:
-            answer = [[sum([self.matrix[i][k] * mtx.matrix[j][k] for k in range(len(mtx.matrix[0]))]) for j in
-                       range(len(mtx.matrix))] for i in range(len(self.matrix))]
+            answer = [[sum([self.matrix[i][k] * multiplier.matrix[j][k] for k in range(len(multiplier.matrix[0]))]) for j in
+                       range(len(multiplier.matrix))] for i in range(len(self.matrix))]
             for row in answer:
                 for number in row:
                     print(round(number, 2), end=" ")
