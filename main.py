@@ -35,8 +35,8 @@ class Matrix:
         if self.columns != multiplier.rows:
             print("\nNot Possible")
         else:
-            answer = [[sum([self.matrix[i][k] * multiplier.matrix[j][k] for k in range(len(multiplier.matrix[0]))]) for j in
-                       range(len(multiplier.matrix))] for i in range(len(self.matrix))]
+            answer = [[sum([self.matrix[i][k] * multiplier.matrix[j][k] for k in range(len(multiplier.matrix[0]))])
+                       for j in range(len(multiplier.matrix))] for i in range(len(self.matrix))]
             for row in answer:
                 for number in row:
                     print(round(number, 2), end=" ")
