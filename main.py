@@ -13,17 +13,11 @@ class Matrix:
             print()
         print()
 
-    def answer(self):
-        for row in self.matrix:
-            for val in row:
-                print(val, end=" ")
-            print()
-        print()
-
     def add(self, addend):
         if self.rows == addend.rows and self.columns == addend.columns:
             self.matrix = [[self.matrix[i][j] + addend.matrix[i][j] for j in range(len(self.matrix[0]))] for
                            i in range(len(self.matrix))]
+            self.generate()
         else:
             print("\nNot Possible")
 
@@ -31,7 +25,7 @@ class Matrix:
         if self.rows == subtrahend.rows and self.columns == subtrahend.columns:
             self.matrix = [[self.matrix[i][j] - subtrahend.matrix[i][j] for j in range(len(self.matrix[0]))] for
                            i in range(len(self.matrix))]
-            self.answer()
+            self.generate()
         else:
             print("\nNot Possible")
 
@@ -43,7 +37,7 @@ class Matrix:
         else:
             self.matrix = [[sum([self.matrix[i][k] * multiplier.matrix[j][k] for k in range(len(multiplier.matrix[0]))])
                             for j in range(len(multiplier.matrix))] for i in range(len(self.matrix))]
-            self.answer()
+            self.generate()
             print()
 
 
