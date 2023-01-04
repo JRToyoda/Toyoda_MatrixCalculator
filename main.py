@@ -42,7 +42,7 @@ class Matrix:
             print("\nNot Possible")
         else:
             self.matrix = [[sum([self.matrix[i][k] * multiplier.matrix[j][k] for k in range(len(multiplier.matrix[0]))])
-                       for j in range(len(multiplier.matrix))] for i in range(len(self.matrix))]
+                            for j in range(len(multiplier.matrix))] for i in range(len(self.matrix))]
             self.answer()
             print()
 
